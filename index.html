@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula CSS</title>
+</head>
+
+<body>
+    <form method="POST" action="form.php">
+        Nome: <input type="text" name="nome" size="40" maxlength="45" placeholder="Digite aqui seu nome completo">
+        Data de Nascimento: <input type="date" name="data">
+        Email: <input type="email" name="email" size="50">
+        Telefone: <input type="text" name="telefone">
+
+        Cidade:
+        <select name="cidade">
+            <option>Cascavel</option>
+            <option>Corbélia</option>
+            <option>Foz do Iguaçu</option>
+        </select>
+
+        Curso:
+        <input type="checkbox" name="curso" value="adm"> Administração
+        <input type="checkbox" name="curso" value="inform"> Informática
+        <input type="checkbox" name="curso" value="ingles"> Inglês
+
+        Período:
+        <input type="radio" name="matutino" value="adm"> Administração
+        <input type="radio" name="curso" value="inform"> Informática
+        <input type="radio" name="curso" value="ingles"> Inglês
+
+    </form>
+</body>
+
+</html>
