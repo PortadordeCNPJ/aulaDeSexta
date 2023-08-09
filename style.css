@@ -26,3 +26,20 @@ body {
     justify-content: center;
     margin: 30px;
 }
+
+.input-inf {
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    margin: 8px;
+}
+
+.inf-cidade {
+    display: flex;
+    flex-direction: row;
+}
+
+.inf-select {
+    display: flex;
+    flex-direction: row;
+}

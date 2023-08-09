@@ -11,24 +11,33 @@
 <body>
     <form class="form-container" method="POST" action="form.php">
         <div class="inf-container">
-            Nome: <input type="text" class="input-" name="nome" size="40" maxlength="45" placeholder="Digite aqui seu nome completo">
-            Data de Nascimento: <input type="date" name="data">
-            Email: <input type="email" name="email" size="50"placeholder="Digite aqui seu endereço de E-mail">
-            Telefone: <input type="text" name="telefone" placeholder="Ex: (45) 99999-9999">
+            Nome: <input type="text" class="input-inf" name="nome" size="40" maxlength="45"
+                placeholder="Digite aqui seu nome completo">
+            Data de Nascimento: <input type="date" class="input-inf" name="data">
+            Email: <input type="email" name="email" class="input-inf" size="50"
+                placeholder="Digite aqui seu endereço de E-mail">
+            Telefone: <input type="text" class="input-inf" name="telefone" placeholder="Ex: (45) 99999-9999">
         </div>
         <div class="inf-container">
-            Cidade:
-            <select name="cidade">
-                <option>Cascavel</option>
-                <option>Corbélia</option>
-                <option>Foz do Iguaçu</option>
-            </select>
+            <div class="inf-cidade">
+                Cidade:
+                <select name="cidade">
+                    <option>Cascavel</option>
+                    <option>Corbélia</option>
+                    <option>Foz do Iguaçu</option>
+
+                </select>
+            </div>
         </div>
         <div class="inf-container">
-            Curso:
-            <input type="checkbox" name="curso" value="adm"> Administração
-            <input type="checkbox" name="curso" value="inform"> Informática
-            <input type="checkbox" name="curso" value="ingles"> Inglês
+            <div class="inf-select">
+                Curso:
+                <div class="">
+                    <input type="checkbox" name="curso" value="adm"> Administração <br />
+                    <input type="checkbox" name="curso" value="inform"> Informática <br />
+                    <input type="checkbox" name="curso" value="ingles"> Inglês <br />
+                </div>
+            </div>
         </div>
 
         <div class="inf-container">
@@ -46,7 +55,7 @@
         <div class="inf-container">
             <div class="inf-button">
                 <input type="submit" name="enviar" value="gravar">
-                <input type="reset" name="apagar" value="deletor">
+                <input type="reset" name="apagar" value="deletar">
             </div>
         </div>
         <a href="www.ceep.com.br"><img src="a.jpg"></a>

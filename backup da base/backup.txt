@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Aula CSS</title>
+</head>
+
+<body>
+    <form class="form-container" method="POST" action="form.php">
+        <div class="inf-container">
+            Nome: <input type="text" class="input-" name="nome" size="40" maxlength="45" placeholder="Digite aqui seu nome completo">
+            Data de Nascimento: <input type="date" name="data">
+            Email: <input type="email" name="email" size="50"placeholder="Digite aqui seu endereço de E-mail">
+            Telefone: <input type="text" name="telefone" placeholder="Ex: (45) 99999-9999">
+        </div>
+        <div class="inf-container">
+            Cidade:
+            <select name="cidade">
+                <option>Cascavel</option>
+                <option>Corbélia</option>
+                <option>Foz do Iguaçu</option>
+            </select>
+        </div>
+        <div class="inf-container">
+            Curso:
+            <input type="checkbox" name="curso" value="adm"> Administração
+            <input type="checkbox" name="curso" value="inform"> Informática
+            <input type="checkbox" name="curso" value="ingles"> Inglês
+        </div>
+
+        <div class="inf-container">
+            Período:
+            <input type="radio" name="periodo" value="matutino"> Matutino
+            <input type="radio" name="periodo" value="vespertino"> vespertino
+            <input type="radio" name="periodo" value="noturno"> Noturno
+        </div>
+
+        <div class="inf-container">
+            Observação:
+            <textarea name="descricao" cols="60" rows="10"></textarea>
+        </div>
+
+        <div class="inf-container">
+            <div class="inf-button">
+                <input type="submit" name="enviar" value="gravar">
+                <input type="reset" name="apagar" value="deletor">
+            </div>
+        </div>
+        <a href="www.ceep.com.br"><img src="a.jpg"></a>
+
+    </form>
+</body>
+
+</html>
