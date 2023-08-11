@@ -12,7 +12,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
+/*meche no form ou o principal que engloba tudo*/
 .form-container {
     background-image: linear-gradient(rgb(179, 132, 197), rgb(142, 113, 187));
     display: flex;
@@ -23,7 +23,7 @@ body {
     border-radius: 15px;
     border: 3px solid #e2d6f0
 }
-
+/*deixa td alinhado*/
 .inf-container {
     display: flex;
     flex-direction: column;
@@ -47,6 +47,7 @@ body {
     display: flex;
     flex-direction: row;
 }
+/*botões de gravar e apagar*/
 .btn{
     width: 100px;
     height: 30px;
@@ -58,6 +59,7 @@ body {
     border: 2px solid rgb(139, 41, 179)
     
 }
+/*deixando redondo as bordas dos inputs*/
 input{
     border-radius: 5px;
 }
