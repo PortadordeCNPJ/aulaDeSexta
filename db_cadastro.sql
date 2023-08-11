@@ -29,4 +29,9 @@ INSERT INTO `tb_cidades`(`nome`) VALUES
     ('Foz do Iguaçu');
 
 
+SELECT tb_clientes.cod_cidade, tb_cidades.cod
+FROM tb_clientes, tb_cidades
+WHERE tb_cidades.cod = tb_clientes.cod_cidade;
+
+
 
