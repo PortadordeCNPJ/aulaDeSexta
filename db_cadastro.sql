@@ -26,7 +26,7 @@ CREATE TABLE `tb_cidades`(
 INSERT INTO `tb_cidades`(`nome`) VALUES
     ('Cascavel'),
     ('Corbéblia'),
-    ('Foz do Iguaçu');s
+    ('Foz do Iguaçu');
 
 
 
