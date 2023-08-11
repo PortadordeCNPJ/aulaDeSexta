@@ -47,6 +47,16 @@ body {
     display: flex;
     flex-direction: row;
 }
+
+.inf-radio {
+    display: flex;
+}
+
+.radio-input {
+    display: flex;
+    flex-direction: column;
+}
+
 /*botões de gravar e apagar*/
 .btn{
     width: 100px;
@@ -67,7 +77,8 @@ textarea{
     border-radius: 7px;
 }
 .radio{
-    width: 115px
+    width: 50px;
+    margin-top: 5px;
 }
 select{
     border-radius: 6px;

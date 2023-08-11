@@ -10,7 +10,9 @@
 
 <body>
     <br><br>
-    <h1><center>REGISTRO</center></h1>
+    <h1>
+        <center>REGISTRO</center>
+    </h1>
     <form class="form-container" method="POST" action="form.php">
         <div class="inf-container">
             Nome: <input type="text" class="input-inf" name="nome" size="40" maxlength="45"
@@ -44,11 +46,20 @@
 
         <div class="inf-container">
             Período: <br><br>
-            Matutino<input type="radio" name="periodo" value="matutino"  class="radio">
-            Vespertino<input type="radio" name="periodo" value="vespertino"class="radio"> 
-            Noturno<input type="radio" name="periodo" value="noturno"   class="radio"> 
-        </div>
+            <div class="inf-radio">
+                <div class="radio-input">
+                    <label for="matutino">Matutino</label>
+                    <label for="vespertino">Vespertino</label>
+                    <label for="noturno">noturno</label>
 
+                </div>
+                <div class="radio-input">
+                    <input type="radio" name="periodo" value="matutino" id="matutino" class="radio">
+                    <input type="radio" name="periodo" value="vespertino" id="vespertino" class="radio">
+                    <input type="radio" name="periodo" value="noturno" id="noturno" class="radio">
+                </div>
+            </div>
+        </div>
         <div class="inf-container">
             Observação:
             <textarea name="descricao" cols="60" rows="10"></textarea>
@@ -60,11 +71,11 @@
                 <input type="reset" name="apagar" value="deletar" class="btn">
             </div>
         </div>
-        
+
 
     </form>
 
-<br><br><br><br><br>
+    <br><br><br><br><br>
 </body>
 
 </html>
