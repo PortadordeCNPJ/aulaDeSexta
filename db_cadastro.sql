@@ -1,40 +1,50 @@
-CREATE DATABASE IF EXISTS `bd_castro` DEFAULT CHAR SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `db_castro`;
-
-CREATE TABLE IF NOT EXISTS `tb_cidades`(
-    cod INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    nome VARCHAR(120) NOT NULL
+CREATE TABLE IF NOT EXISTS `tb_cidades` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `nome` VARCHAR(255) NOT NULL
 );
 
-INSERT INTO `tb_cidades`(`nome`) VALUES
-    ('Cascavel'),
-    ('Corbéblia'),
-    ('Foz do Iguaçu');
+INSERT INTO `tb_cidades` (`nome`) VALUES 
+('Cascavel'),
+('Corbélia'),
+('Foz do Iguaçu');
 
-
-CREATE TABLE IF NOT EXISTS `tb_clientes`(
-    cod INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    nome VARCHAR(120) NOT NULL,
-    data_nascimento DATE NOT NULL,
-    email VARCHAR(50),
-    telefone BIGINT NOT NULL,
-    cod_cidade INTEGER,
-    FOREIGN KEY (cod_cidade) REFERENCES tb_cidades(cod)
+CREATE TABLE IF NOT EXISTS `tb_cursos` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `nome` VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS `tb_cidades`(
-    cod INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    nome VARCHAR(120) NOT NULL
+INSERT INTO `tb_cursos` (`nome`) VALUES 
+('Administração'),
+('Informática'),
+('Inglês');
+
+CREATE TABLE IF NOT EXISTS `tb_periodos` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `nome` VARCHAR(255) NOT NULL
 );
 
-INSERT INTO `tb_cidades`(`nome`) VALUES
-    ('Cascavel'),
-    ('Corbéblia'),
-    ('Foz do Iguaçu');
+INSERT INTO `tb_periodos` (`nome`) VALUES 
+('Matutino'),
+('Vespertino'),
+('Noturno');
 
-SELECT tb_clientes.cod_cidade, tb_cidades.cod
-FROM tb_clientes, tb_cidades
-WHERE tb_cidades.cod = tb_clientes.cod_cidade;
+CREATE TABLE IF NOT EXISTS `tb_observacao` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `observacao` VARCHAR(255) NOT NULL
+);
 
-
-
+CREATE TABLE IF NOT EXISTS `tb_clientes` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `nome` VARCHAR(255) NOT NULL,
+    `data_nasc` DATE NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `telefone` VARCHAR(255) NOT NULL,
+    `id_cidade` INT,
+    `id_curso` INT,
+    `id_periodo` INT,
+    `id_observacao` INT, 
+    FOREIGN KEY(id_cidade) REFERENCES tb_cidades (id), 
+    FOREIGN KEY(id_curso) REFERENCES tb_cursos (id), 
+    FOREIGN KEY(id_periodo) REFERENCES tb_periodos (id), 
+    FOREIGN KEY(id_observacao) REFERENCES tb_observacao (id)
+);
