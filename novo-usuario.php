@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Aula CSS</title>
-</head>
-
-<body>
-    <br><br>
-    <h1>
-        <center>REGISTRO</center>
-    </h1>
-    <form class="form-container" method="POST" action="cad.php">
+<h1>
+    <center>REGISTRO</center>
+</h1>
+    <form class="form-container" method="post" action="?page=salvar">
         <div class="inf-container">
+            <input type="hidden" name="acao" value="cadastrar">
             Nome: <input type="text" class="input-inf" name="nome" size="40" maxlength="45"
                 placeholder="Digite aqui seu nome completo">
             Data de Nascimento: <input type="date" class="input-inf" name="data">
@@ -50,7 +39,7 @@
                 <div class="radio-input">
                     <label for="matutino">Matutino</label>
                     <label for="vespertino">Vespertino</label>
-                    <label for="noturno">noturno</label>
+                    <label for="noturno">Noturno</label>
 
                 </div>
                 <div class="radio-input">
@@ -74,8 +63,3 @@
 
 
     </form>
-
-    <br><br><br><br><br>
-</body>
-
-</html>
