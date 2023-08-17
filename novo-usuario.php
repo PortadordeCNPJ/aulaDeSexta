@@ -5,19 +5,19 @@
         <div class="inf-container">
             <input type="hidden" name="acao" value="cadastrar">
             Nome: <input type="text" class="input-inf" name="nome" size="40" maxlength="45"
-                placeholder="Digite aqui seu nome completo">
-            Data de Nascimento: <input type="date" class="input-inf" name="data">
+                placeholder="Digite aqui seu nome completo" id="nome">
+            Data de Nascimento: <input type="date" class="input-inf" name="data_nasc" id="data_nasc">
             Email: <input type="email" name="email" class="input-inf" size="50"
-                placeholder="Digite aqui seu endereço de E-mail">
-            Telefone: <input type="text" class="input-inf" name="telefone" placeholder="Ex: (45) 99999-9999">
+                placeholder="Digite aqui seu endereço de E-mail" id="email">
+            Telefone: <input type="text" class="input-inf" name="telefone" placeholder="Ex: (45) 99999-9999" id="telefone">
         </div>
         <div class="inf-container">
             <div class="inf-cidade">
                 Cidade:
-                <select name="cidade">
-                    <option name="cidade1">Cascavel</option>
-                    <option name="cidade2">Corbélia</option>
-                    <option name="ciadade3">Foz do Iguaçu</option>
+                <select name="cidade" id="cidade">
+                    <option name="Cascavel" id="Cascavel">Cascavel</option>
+                    <option name="Corbélia" id="Corbelia">Corbélia</option>
+                    <option name="Foz" id="Foz">Foz do Iguaçu</option>
 
                 </select>
             </div>
@@ -56,8 +56,8 @@
 
         <div class="inf-container">
             <div class="inf-button">
-                <input type="submit" name="enviar" value="gravar" class="btn">
-                <input type="reset" name="apagar" value="deletar" class="btn">
+                <input type="submit" name="enviar" value="gravar" class="btn-form">
+                <input type="reset" name="apagar" value="deletar" class="btn-form">
             </div>
         </div>
 

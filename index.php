@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="php_icon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Aula de Sexta</title>
 
     <!--Template based on URL below-->
@@ -49,14 +50,14 @@
         <div class="row">
             <div class="col mt-5">
                 <?php
-                include("confing.php");
-                switch (@$_REQUEST) {
+                include("config.php");
+                switch (@$_REQUEST["page"]) {
                     case 'novo':
                         include("novo-usuario.php");
                         break;
 
                     case 'listar':
-                        include("novo-usuario.php");
+                        include("listar-usuario.php");
                         break;
 
                     case 'salvar':
