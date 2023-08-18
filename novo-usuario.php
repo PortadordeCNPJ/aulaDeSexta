@@ -14,10 +14,10 @@
         <div class="inf-container">
             <div class="inf-cidade">
                 Cidade:
-                <select name="cidade" id="cidade">
-                    <option name="Cascavel" id="Cascavel">Cascavel</option>
-                    <option name="Corbélia" id="Corbelia">Corbélia</option>
-                    <option name="Foz" id="Foz">Foz do Iguaçu</option>
+                <select name="cidade">
+                    <option name="Cascavel">Cascavel</option>
+                    <option name="Corbélia">Corbélia</option>
+                    <option name="Foz do Iguaçu">Foz do Iguaçu</option>
 
                 </select>
             </div>
@@ -26,9 +26,9 @@
             <div class="inf-select">
                 Curso:
                 <div class="">
-                    <input type="checkbox" name="curso" value="adm"> Administração <br />
-                    <input type="checkbox" name="curso" value="inform"> Informática <br />
-                    <input type="checkbox" name="curso" value="ingles"> Inglês <br />
+                    <input type="checkbox" name="curso" value="Administração"> Administração <br />
+                    <input type="checkbox" name="curso" value="Informática"> Informática <br />
+                    <input type="checkbox" name="curso" value="Inglês"> Inglês <br />
                 </div>
             </div>
         </div>
