@@ -15,9 +15,9 @@
             <div class="inf-cidade">
                 Cidade:
                 <select name="cidade">
-                    <option name="Cascavel">Cascavel</option>
-                    <option name="Corbélia">Corbélia</option>
-                    <option name="Foz do Iguaçu">Foz do Iguaçu</option>
+                    <option value="1">Cascavel</option>
+                    <option value="2">Corbélia</option>
+                    <option value="3">Foz do Iguaçu</option>
 
                 </select>
             </div>
@@ -26,9 +26,9 @@
             <div class="inf-select">
                 Curso:
                 <div class="">
-                    <input type="checkbox" name="curso" value="Administração"> Administração <br />
-                    <input type="checkbox" name="curso" value="Informática"> Informática <br />
-                    <input type="checkbox" name="curso" value="Inglês"> Inglês <br />
+                    <input type="checkbox" name="curso" value="1"> Administração <br />
+                    <input type="checkbox" name="curso" value="2"> Informática <br />
+                    <input type="checkbox" name="curso" value="3"> Inglês <br />
                 </div>
             </div>
         </div>
@@ -43,9 +43,9 @@
 
                 </div>
                 <div class="radio-input">
-                    <input type="radio" name="periodo" value="matutino" id="matutino" class="radio">
-                    <input type="radio" name="periodo" value="vespertino" id="vespertino" class="radio">
-                    <input type="radio" name="periodo" value="noturno" id="noturno" class="radio">
+                    <input type="radio" name="periodo" value="1" id="matutino" class="radio">
+                    <input type="radio" name="periodo" value="2" id="vespertino" class="radio">
+                    <input type="radio" name="periodo" value="3" id="noturno" class="radio">
                 </div>
             </div>
         </div>

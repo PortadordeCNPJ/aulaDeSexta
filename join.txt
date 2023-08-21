@@ -1,0 +1,3 @@
+SELECT tb_clientes.nome,tb_cidades.nome AS 'nome_cidade' FROM `tb_clientes` LEFT JOIN tb_cidades ON tb_cidades.id = tb_clientes.id_cidade;
+
+usado para puxar varis informações de tabelas diferentes, assim agrupando as em uma tabela só
