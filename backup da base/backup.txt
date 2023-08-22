@@ -1,57 +1,107 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+ <?php
+    //pega o resultado da tabela de cidades
+    $sql_cidades = "SELECT * FROM tb_cidades";
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Aula CSS</title>
-</head>
+    //resultado da conecção com o sql de cidades
+    $res_cidades = $conn->query($sql_cidades);
 
-<body>
-    <form class="form-container" method="POST" action="form.php">
-        <div class="inf-container">
-            Nome: <input type="text" class="input-" name="nome" size="40" maxlength="45" placeholder="Digite aqui seu nome completo">
-            Data de Nascimento: <input type="date" name="data">
-            Email: <input type="email" name="email" size="50"placeholder="Digite aqui seu endereço de E-mail">
-            Telefone: <input type="text" name="telefone" placeholder="Ex: (45) 99999-9999">
-        </div>
-        <div class="inf-container">
-            Cidade:
-            <select name="cidade">
-                <option>Cascavel</option>
-                <option>Corbélia</option>
-                <option>Foz do Iguaçu</option>
-            </select>
-        </div>
-        <div class="inf-container">
-            Curso:
-            <input type="checkbox" name="curso" value="adm"> Administração
-            <input type="checkbox" name="curso" value="inform"> Informática
-            <input type="checkbox" name="curso" value="ingles"> Inglês
-        </div>
+    //A variavel $qtd é a quantidade de resultados, então ele ira pegar do resultados o número de linhas $num_rows
+    $sql_cidades = $res_cidades->num_rows;
 
-        <div class="inf-container">
-            Período:
-            <input type="radio" name="periodo" value="matutino"> Matutino
-            <input type="radio" name="periodo" value="vespertino"> vespertino
-            <input type="radio" name="periodo" value="noturno"> Noturno
-        </div>
 
-        <div class="inf-container">
-            Observação:
-            <textarea name="descricao" cols="60" rows="10"></textarea>
-        </div>
+    //pega os valores da tabela de cursos
+    $sql_curso = "SELECT * FROM tb_cursos";
 
-        <div class="inf-container">
-            <div class="inf-button">
-                <input type="submit" name="enviar" value="gravar">
-                <input type="reset" name="apagar" value="deletor">
-            </div>
-        </div>
-        <a href="www.ceep.com.br"><img src="a.jpg"></a>
+    //pefa o resultado da 
+    $res_curso = $conn->query($sql_curso);
 
-    </form>
-</body>
+    //A variavel $qtd é a quantidade de resultados, então ele ira pegar do resultados o número de linhas $num_rows
+    $sql_curso = $res_curso->num_rows;
 
-</html>
+
+    //pega o resultado da tabela de periodos
+    $sql_periodos = "SELECT * FROM tb_periodos";
+
+    //resultado da conecção com o sql
+    $res_periodos = $conn->query($sql_periodos);
+
+    //A variavel $qtd é a quantidade de resultados, então ele ira pegar do resultados o número de linhas $num_rows
+    $sql_periodos = $res_periodos->num_rows;
+    ?>
+
+ <h1>
+     <center>REGISTRO</center>
+ </h1>
+ <form class="form-container" method="post" action="?page=salvar">
+     <div class="inf-container">
+         <input type="hidden" name="acao" value="cadastrar">
+         Nome: <input type="text" class="input-inf" name="nome" size="40" maxlength="45" placeholder="Digite aqui seu nome completo" id="nome">
+         Data de Nascimento: <input type="date" class="input-inf" name="data_nasc" id="data_nasc">
+         Email: <input type="email" name="email" class="input-inf" size="50" placeholder="Digite aqui seu endereço de E-mail" id="email">
+         Telefone: <input type="text" class="input-inf" name="telefone" placeholder="Ex: (45) 99999-9999" id="telefone">
+     </div>
+     <div class="inf-container">
+         <div class="inf-cidade">
+             Cidade:
+             <select name="cidade">
+                 <?php
+
+                    if ($sql_cidades > 0) {
+                        while ($row_cidade = $res_cidades->fetch_object()) {
+
+                            print "<option value='" .  $row_cidade->id . "'>" .  $row_cidade->nome . "</option>";
+                        }
+                    }
+                    ?>
+             </select>
+         </div>
+     </div>
+     <div class="inf-container">
+         <div class="inf-select">
+             Curso:
+             <div class="">
+
+                 <?php
+
+                    if ($sql_curso > 0) {
+                        while ($row_curso = $res_curso->fetch_object()) {
+
+                            print "<input type='checkbox' name='curso' value='" .  $row_curso->id . "'>" .  $row_curso->nome . "";
+                        }
+                    }
+                    ?>
+             </div>
+         </div>
+     </div>
+
+     <div class="inf-container">
+         Período: <br><br>
+         <div class="inf-radio">
+             <div class="radio-input">
+                 <?php
+
+                    if ($sql_periodos > 0) {
+                        while ($row_periodos = $res_periodos->fetch_object()) {
+
+                            print "<input type='radio' name='periodo' class=\"radio\" value='" .  $row_periodos->id . "'>" .  $row_periodos->nome . "";
+                        }
+                    }
+                    ?>
+             </div>
+         </div>
+     </div>
+     <div class="inf-container">
+         Observação:
+         
+         <textarea name="descricao" cols="60" rows="10" id="descricao"></textarea>
+     </div>
+
+     <div class="inf-container">
+         <div class="inf-button">
+             <input type="submit" name="enviar" value="gravar" class="btn-form">
+             <input type="reset" name="apagar" value="deletar" class="btn-form">
+         </div>
+     </div>
+
+
+ </form>
