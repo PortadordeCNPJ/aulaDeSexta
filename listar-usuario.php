@@ -1,8 +1,8 @@
 <h1>Listar Usuario</h1>
 <?php
 $sql_clientes = "SELECT * FROM tb_clientes AS id_cidade 
-                 INNER JOIN tb_cidades AS nome_cidade
-                 ON id_cidade.tb_cidades_nome_cidade = nome_cidade.nome_cidade";
+                 INNER JOIN tb_cidades AS nome_cid
+                 ON id_cidade.tb_cidades_nome_cidade = nome_cid.id";
 
 $res = $conn->query($sql_clientes);
 
