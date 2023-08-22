@@ -26,7 +26,7 @@ switch ($_REQUEST["acao"]) {
 
         break;
 
-    case 'label':
+    case 'label0':
         # código...
         break;
 
