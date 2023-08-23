@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21-Ago-2023 às 16:47
+-- Tempo de geração: 23-Ago-2023 às 15:04
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -64,7 +64,9 @@ CREATE TABLE `tb_clientes` (
 --
 
 INSERT INTO `tb_clientes` (`id`, `nome`, `data_nasc`, `email`, `telefone`, `observacao`, `id_cidade`, `id_curso`, `id_periodo`) VALUES
-(1, 'Guilherme', '2023-08-04', 'guilheremd@guiguigugi.com', '(45) 9999-9999', 'asdasdasdasdasdasdasd', 1, 2, 2);
+(1, 'Guilherme', '2023-08-04', 'guilheremd@guiguigugi.com', '(45) 9999-9999', 'asdasdasdasdasdasdasd', 1, 2, 2),
+(2, 'guilherme de souza muller ', '2023-08-26', 'guilhermestarfs@gmail.com', '(45) 9999-9999', 'ZA WARUDOOOOOOOOOOO', 3, 2, 1),
+(3, 'Guilherme', '2023-08-09', 'guilhermestarfs@gmail.com', '(45) 9999-9999', '4ffff', 2, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -151,7 +153,7 @@ ALTER TABLE `tb_cidades`
 -- AUTO_INCREMENT de tabela `tb_clientes`
 --
 ALTER TABLE `tb_clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cursos`
