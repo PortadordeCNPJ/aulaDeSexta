@@ -4,7 +4,8 @@
 $sql_clientes = "SELECT clientes.*,cidades.id AS id_cidade, 
                 cursos.id AS id_curso ,
                 cidades.nome AS nome_cidade, 
-                cursos.nome AS nome_curso 
+                cursos.nome AS nome_curso,
+                periodos.nome AS nome_periodo
                 FROM tb_clientes AS clientes 
                 INNER JOIN tb_cidades AS cidades ON clientes.id_cidade = cidades.id 
                 INNER JOIN tb_cursos AS cursos ON clientes.id_curso = cursos.id
@@ -104,8 +105,11 @@ $sql_periodos = $res_periodos->num_rows;
 
                 if ($sql_periodos > 0) {
                     while ($row_periodos = $res_periodos->fetch_object()) {
-
-                        print "<input type='radio' name='periodo' class=\"radio\" value='" .  $row_periodos->id . "'>" .  $row_periodos->nome . "";
+                        if ($row_periodos->id == $row_cliente->id_periodo) {
+                            print "<input Checked type='radio' name='periodo' class=\"radio\" value='" .  $row_periodos->id . "'>" .  $row_periodos->nome . "";
+                        } else {
+                            print "<input type='radio' name='periodo' class=\"radio\" value='" .  $row_periodos->id . "'>" .  $row_periodos->nome . "";
+                        }
                     }
                 }
                 ?>
@@ -115,7 +119,7 @@ $sql_periodos = $res_periodos->num_rows;
     <div class="inf-container">
         Observação:
 
-        <textarea name="descricao" cols="60" rows="10" id="descricao"></textarea>
+        <textarea name="descricao" cols="60" rows="10" id="descricao"><?php $row_cliente->observacao; ?></textarea>
     </div>
 
     <div class="inf-container">

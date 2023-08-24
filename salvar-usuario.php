@@ -45,7 +45,7 @@ switch ($_REQUEST["acao"]) {
                              id_cidade='{$id_cidade}', 
                              id_curso='{$id_curso}', 
                              id_periodo='{$id_periodo}', 
-                             observacao='{$observacao}'
+                             descricao='{$observacao}'
         
         WHERE
             id=" . $_REQUEST["id"];
