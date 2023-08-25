@@ -51,7 +51,7 @@ $sql_periodos = $res_periodos->num_rows;
 <form class="form-container" method="post" action="?page=salvar">
     <div class="inf-container">
         <input type="hidden" name="acao" value="editar">
-        <input type="hidden" value="<?php echo $row_cliente->id; ?>">
+        <input type="hidden" name="id" value="<?php echo $row_cliente->id; ?>">
         Nome: <input type="text" class="input-inf" name="nome" size="40" maxlength="45" placeholder="Digite aqui seu nome completo" id="nome" value="<?php echo $row_cliente->nome; ?>">
         Data de Nascimento: <input type="date" class="input-inf" name="data_nasc" id="data_nasc" value="<?php echo $row_cliente->data_nasc; ?>">
         Email: <input type="email" name="email" class="input-inf" size="50" placeholder="Digite aqui seu endereço de E-mail" id="email" value="<?php echo $row_cliente->email; ?>">
@@ -119,13 +119,12 @@ $sql_periodos = $res_periodos->num_rows;
     <div class="inf-container">
         Observação:
 
-        <textarea name="descricao" cols="60" rows="10" id="descricao"><?php $row_cliente->observacao; ?></textarea>
+        <textarea name="descricao" cols="60" rows="10" id="descricao"><?php echo $row_cliente->observacao; ?></textarea>
     </div>
 
     <div class="inf-container">
         <div class="inf-button">
             <input type="submit" name="enviar" value="gravar" class="btn-form">
-            <input type="reset" name="apagar" value="deletar" class="btn-form">
         </div>
     </div>
 
