@@ -3,18 +3,20 @@
     //Iniciando uma sessão para login do usuário
     session_start();
 
-    if (empty($_POST) or (empty($nome) or (empty($data_nasc)))) {
-        echo "<stript>location.href='index.php'</script>";
+    if (empty($_POST) or (empty($_POST["nome"]) or (empty($_POST["data_nasc"])))) {
+        echo "<script>location.href='index.php';</script>";
     }
 
-    $nome = $_POST["name"];
+    include('config.php');
+
+    $nome = $_POST["nome"];
     $data_nasc = $_POST["data_nasc"];
 
     $sql_clientes = "SELECT * FROM tb_clientes
-                          WHERE name='{$nome}'
-                          AND data_nasc='{$data_nasc}'";
+                          WHERE nome = '{$nome}'
+                          AND data_nasc = '{$data_nasc}'";
 
-    $res = $conn->query($sql_clientes) or die($conn->error);
+    $res = $conn->query($sql_clientes);
 
     $row = $res->fetch_object();
 
@@ -22,10 +24,10 @@
 
     if ($qtd > 0) {
         $_SESSION["name"] = $nome;
-        $_SESSION["email"] = $row->email;
-        echo "<stript>location.href='dashboard.php';</script>";
+        $_SESSION["data_nasc"] = $data_nasc;
+        echo "<script>location.href='dashboard.php';</script>";
     } else {
-        echo "<stript>alert('Usuários e/ou senha incorreto(s)');</script>";
-        echo "<stript>location.href='index.php';</script>";
+        echo "<script>alert('Usuários e/ou senha incorreto(s)');</script>";
+        echo "<script>location.href='index.php';</script>";
     }
     ?>

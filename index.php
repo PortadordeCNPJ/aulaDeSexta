@@ -39,7 +39,7 @@
                     <a class="nav-link" href="?page=listar">Listar Usuários</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="?page=login">Login</a>
+                    <a class="nav-link" href="?page=logar">Login</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -71,8 +71,8 @@
                         include("editar-usuario.php");
                         break;
 
-                    case 'login':
-                        include("login-usuario.php");
+                    case 'logar':
+                        include("logar-usuario.php");
                         break;
 
 
